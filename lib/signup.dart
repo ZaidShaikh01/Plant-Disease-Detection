@@ -50,8 +50,8 @@ class _SignUpScreenState extends State<Signup> {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color.fromARGB(255, 254, 252, 239),
-                Color.fromARGB(255, 238, 231, 175),
+                Color.fromARGB(255, 76, 201, 240),
+                Color.fromARGB(255, 247, 37, 133),
               ],
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -72,25 +72,25 @@ class _SignUpScreenState extends State<Signup> {
                   children: [
                     Image.asset(
                       'assets/images/applogo.png',
-                      scale: 6,
+                      scale: 2.1,
                     ),
                     const SizedBox(
-                      width: 20,
+                      width: 0,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          'FRUIT',
+                          'PLANT',
                           style: TextStyle(
-                              fontSize: 24,
+                              fontSize: 26,
                               fontWeight: FontWeight.bold,
                               color: Color.fromARGB(255, 3, 3, 3)),
                         ),
                         Text(
                           'DETECTION',
                           style: TextStyle(
-                            fontSize: 24,
+                            fontSize: 26,
                             fontWeight: FontWeight.bold,
                             color: Color.fromARGB(255, 255, 5, 5),
                           ),
@@ -247,7 +247,7 @@ class _SignUpScreenState extends State<Signup> {
                         style: TextStyle(
                             fontFamily: 'Rubik Medium',
                             fontSize: 15,
-                            color: Color.fromARGB(246, 255, 0, 0)),
+                            color: Color.fromARGB(255, 0, 28, 112)),
                       ),
                       onPressed: () {
                         Navigator.push(
