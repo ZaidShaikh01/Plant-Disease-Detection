@@ -72,7 +72,7 @@ class _SignUpScreenState extends State<Signup> {
                   children: [
                     Image.asset(
                       'assets/images/applogo.png',
-                      scale: 2.1,
+                      scale: 3,
                     ),
                     const SizedBox(
                       width: 0,
