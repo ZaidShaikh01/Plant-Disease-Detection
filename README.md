@@ -1,4 +1,4 @@
-# trail_1
+# Plant Disease Detection 
 
 A new Flutter project.
 
