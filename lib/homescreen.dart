@@ -54,46 +54,46 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void applyDiagnosis(String label) {
-    switch (label) {
-      case "Pepper Bell Bacterial Spot":
+    /*switch (label) {
+      case "Pepper__bell___Bacterial_spot":
         possibleCauses =
         "Caused by Xanthomonas bacteria, spread through splashing rain.";
         possibleSolution =
         "Spray early and often. Use copper and Mancozeb sprays.";
         break;
 
-      case "Pepper Bell Healthy":
+      case "Pepper__bell___healthy":
         possibleCauses = "Crops are okay.";
         possibleSolution = "N/A";
         break;
 
-      case "Potato Early Blight":
+      case "Potato___Early_blight":
         possibleCauses =
         "The fungus Alternaria solani, high humidity and long periods of leaf wetness.";
         possibleSolution =
         "Maintain optimum growing conditions: proper fertilization, irrigation, and pest management.";
         break;
 
-      case "Potato Healthy":
+      case "Potato___healthy":
         possibleCauses = "Crops are okay.";
         possibleSolution = "N/A";
         break;
 
-      case "Potato Late Blight":
+      case "Potato___Late_blight":
         possibleCauses =
         "Occurs in humid regions with temperatures ranging between 4 and 29 °C.";
         possibleSolution =
         "Eliminate cull piles and volunteer potatoes, use proper harvesting and storage practices, and apply fungicides when necessary.";
         break;
 
-      case "Tomato Bacterial Spot":
+      case "Tomato_Bacterial_spot":
         possibleCauses =
         "Xanthomonas bacteria can be introduced on contaminated seed and transplants, which may or may not show symptoms.";
         possibleSolution =
         "Remove symptomatic plants from the field or greenhouse to prevent the spread to healthy plants.";
         break;
 
-      case "Tomato Early Blight":
+      case "Tomato_Early_blight":
         possibleCauses =
         "Caused by the fungus Alternaria solani, which thrives in high humidity and long periods of leaf wetness.";
         possibleSolution =
@@ -150,6 +150,86 @@ class _HomeScreenState extends State<HomeScreen> {
         possibleSolution =
         "Spray Imidacloprid on the entire plant, especially under the leaves.";
         break;
+
+      default:
+        possibleCauses = "N/A";
+        possibleSolution = "N/A";
+        break;
+    }*/
+    switch (label) {
+    // Grouped cases for "healthy" plants
+      case "Pepper__bell___healthy":
+      case "Potato___healthy":
+      case "Tomato_healthy":
+        possibleCauses = "Crops are okay.";
+        possibleSolution = "N/A";
+        break;
+
+    // Cases for Pepper and Potato diseases
+      case "Pepper__bell___Bacterial_spot":
+        possibleCauses = "Caused by Xanthomonas bacteria, spread through splashing rain.";
+        possibleSolution = "Spray early and often. Use copper and Mancozeb sprays.";
+        break;
+
+      case "Potato___Early_blight":
+        possibleCauses = "The fungus Alternaria solani, high humidity and long periods of leaf wetness.";
+        possibleSolution = "Maintain optimum growing conditions: proper fertilization, irrigation, and pest management.";
+        break;
+
+      case "Potato___Late_blight":
+        possibleCauses = "Occurs in humid regions with temperatures ranging between 4 and 29 °C.";
+        possibleSolution = "Eliminate cull piles and volunteer potatoes, use proper harvesting and storage practices, and apply fungicides when necessary.";
+        break;
+
+    // Tomato diseases
+      case "Tomato_Bacterial_spot":
+        possibleCauses = "Xanthomonas bacteria can be introduced on contaminated seed and transplants, which may or may not show symptoms.";
+        possibleSolution = "Remove symptomatic plants from the field or greenhouse to prevent the spread to healthy plants.";
+        break;
+
+      case "Tomato_Early_blight":
+        possibleCauses = "Caused by the fungus Alternaria solani, which thrives in high humidity and long periods of leaf wetness.";
+        possibleSolution = "Maintain optimum growing conditions: proper fertilization, irrigation, and pest management.";
+        break;
+
+      case "Tomato_Late_blight":
+        possibleCauses = "Caused by the water mold Phytophthora infestans.";
+        possibleSolution = "Apply fungicide timely to control the spread.";
+        break;
+
+      case "Tomato_Leaf_Mold":
+        possibleCauses = "High relative humidity (greater than 85%).";
+        possibleSolution = "Grow leaf mold-resistant varieties and use drip irrigation to avoid watering foliage.";
+        break;
+
+      case "Tomato_Septoria_leaf_spot":
+        possibleCauses = "A fungus that spreads by spores, especially in wet or humid weather. Attacks plants in the nightshade family and can be harbored on related weeds.";
+        possibleSolution = "Remove infected leaves immediately and use organic fungicides as a preventative measure.";
+        break;
+
+      case "Tomato_Spider_mites_Two_spotted_spider_mite":
+        possibleCauses = "Spider mites feed on leaves during hot and dry conditions.";
+        possibleSolution = "Use a strong stream of water to knock spider mites off the plants, or apply insecticidal soaps and horticultural oils.";
+        break;
+
+      case "Tomato__Target_Spot":
+        possibleCauses = "Caused by the fungus Corynespora cassiicola, which spreads to plants.";
+        possibleSolution = "Plant resistant varieties and keep farms free from weeds.";
+        break;
+
+      case "Tomato_mosaic_virus":
+        possibleCauses = "Spread by aphids, mites, fungi, nematodes, and contact; can also be transmitted via pollen and seeds.";
+        possibleSolution = "Remove all infected plants and destroy them as there is no cure.";
+        break;
+
+      case "Tomato_YellowLeaf__Curl_Virus":
+        possibleCauses = "Physically spread plant-to-plant by the silverleaf whitefly.";
+        possibleSolution = "Spray Imidacloprid on the entire plant, especially under the leaves.";
+        break;
+
+      case "Random":
+        possibleCauses= "N/A";
+        possibleSolution= "PLEASE CHOOSE A PROPER IMAGE..";
 
       default:
         possibleCauses = "N/A";
@@ -224,15 +304,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
+
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
+
                         ..._results.map((result) {
+
                           return Card(
                             child: Container(
                               margin: const EdgeInsets.all(10),
+
                               child: Text(
+
                                 "${result['label']} - ${result['confidence'].toStringAsFixed(2)}",
                               ),
                             ),
@@ -245,8 +330,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Possible Causes: $possibleCauses"),
+
+                                  Text("Possible Causes: $possibleCauses",
+                                  ),
                                   const SizedBox(height: 8),
+
                                   Text("Possible Solutions: $possibleSolution"),
                                 ],
                               ),

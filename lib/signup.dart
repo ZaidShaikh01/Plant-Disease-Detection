@@ -11,7 +11,6 @@ class Signup extends StatefulWidget {
   @override
   State<Signup> createState() => _SignUpScreenState();
 }
-
 class _SignUpScreenState extends State<Signup> {
   bool loading = false;
   final _formKey = GlobalKey<FormState>();
